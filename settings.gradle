@@ -1,0 +1,15 @@
+pluginManagement {
+	repositories {
+		mavenLocal()
+		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+		mavenCentral()
+	}
+	resolutionStrategy {
+		eachPlugin {
+			if (requested.id.id == 'org.springframework.boot') {
+				useModule("org.springframework.boot:spring-boot-gradle-plugin:${requested.version}")
+			}
+		}
+	}
+}
+rootProject.name = 'google_authenticator_web_demo'
